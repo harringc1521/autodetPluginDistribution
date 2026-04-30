@@ -1,1 +1,0 @@
-runSubprocess: "./install.sh", preferencesDirectory$
