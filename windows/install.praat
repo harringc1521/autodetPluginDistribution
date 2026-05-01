@@ -1,0 +1,1 @@
+runSubprocess: ".\install.bat", preferencesDirectory$
