@@ -18,7 +18,7 @@ goto :eof
 
 :install
     if not exist "%1\plugin_autodetLM" ( mkdir "%1\plugin_autodetLM" )
-    copy /y .\plugin_autodetLM\setup.praat "%1\plugin_autodetLM"
-    copy /y .\plugin_autodetLM\run_autodet.praat "%1\plugin_autodetLM"
-    copy /y .\plugin_autodetLM\open_autodet.praat "%1\plugin_autodetLM"
+    copy /y .\setup.praat "%1\plugin_autodetLM"
+    copy /y .\run_autodet.praat "%1\plugin_autodetLM"
+    copy /y .\open_autodet.praat "%1\plugin_autodetLM"
     goto :eof

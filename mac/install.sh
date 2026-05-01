@@ -3,7 +3,7 @@ if [ $# == 0 ]; then
 else
 	echo $1
 	mkdir "$1/plugin_autodetLM"
-	cp ./plugin_autodetLM/setup.praat "$1/plugin_autodetLM"
-	cp ./plugin_autodetLM/run_autodetLM.praat "$1/plugin_autodetLM"
-	cp ./plugin_autodetLM/open_autodetLM.praat "$1/plugin_autodetLM"
+	cp ./setup.praat "$1/plugin_autodetLM"
+	cp ./run_autodetLM.praat "$1/plugin_autodetLM"
+	cp ./open_autodetLM.praat "$1/plugin_autodetLM"
 fi
