@@ -1,5 +1,6 @@
 form: "Options"
 	boolean: "option", "Off"
+	word: "module", "norm_comp"
 endform
 
 objects# = selected# ()
@@ -22,7 +23,7 @@ autodetAppPath$ = ""
 praatPath$ = ""
 
 if windows
-	autodetAppPath$ = "DemoAutodetApp"
+	autodetAppPath$ = "C:\Users\student\Documents\harringc\autodetLM\AutodetPlugin\StandaloneDesktopApp1\output\build\DemoAutodetApp.exe"
 	praatPath$ = ""
 elif macintosh
 	autodetAppPath$ = "/Applications/AutodetLMApp/application/run_AutodetLMApp.sh"
@@ -32,13 +33,9 @@ else
 endif
 
 if windows
-	output$ = runSubprocess$(autodetAppPath$, praatPath$, file_names$)
+	runSubprocess: autodetAppPath$, praatPath$, module$, file_names$
 elif macintosh
-	appendInfoLine: autodetAppPath$ + " /Applications/MATLAB/MATLAB_Runtime/R2025a " + praatPath$ + " " + file_names$
-	output$ = runSubprocess$(autodetAppPath$, "/Applications/MATLAB/MATLAB_Runtime/R2025a", praatPath$, file_names$)
+	runSubprocess: autodetAppPath$, "/Applications/MATLAB/MATLAB_Runtime/R2025a", praatPath$, module$, file_names$
 else 
 
 endif
-
-
-appendInfoLine: output$
