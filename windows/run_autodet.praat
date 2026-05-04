@@ -23,8 +23,8 @@ autodetAppPath$ = ""
 praatPath$ = ""
 
 if windows
-	autodetAppPath$ = "C:\Users\student\Documents\harringc\autodetLM\AutodetPlugin\StandaloneDesktopApp1\output\build\DemoAutodetApp.exe"
-	praatPath$ = ""
+	autodetAppPath$ = "C:\Program Files\AutodectionApp\application\DemoAutodetApp.exe"
+	praatPath$ = readFile$ ("config.txt")
 elif macintosh
 	autodetAppPath$ = "/Applications/AutodetLMApp/application/run_AutodetLMApp.sh"
 	praatPath$ = "/Applications/Praat.app/Contents/MacOS/Praat"
@@ -32,10 +32,15 @@ else
 
 endif
 
+appendInfoLine: autodetAppPath$
+appendInfoLine: praatPath$
+appendInfoLine: module$
+appendInfoLine: file_names$
+
 if windows
-	runSubprocess: autodetAppPath$, praatPath$, module$, file_names$
+	asynchronous runSubprocess: autodetAppPath$, praatPath$, module$, file_names$
 elif macintosh
-	runSubprocess: autodetAppPath$, "/Applications/MATLAB/MATLAB_Runtime/R2025a", praatPath$, module$, file_names$
+	asynchronous runSubprocess: autodetAppPath$, "/Applications/MATLAB/MATLAB_Runtime/R2025a", praatPath$, module$, file_names$
 else 
 
 endif

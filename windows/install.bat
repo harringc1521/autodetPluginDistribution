@@ -21,4 +21,7 @@ goto :eof
     copy /y .\setup.praat "%1\plugin_autodetLM"
     copy /y .\run_autodet.praat "%1\plugin_autodetLM"
     copy /y .\open_autodet.praat "%1\plugin_autodetLM"
+    if exist "%1\plugin_autodetLM\config.txt" ( del %1\plugin_autodetLM\config.txt )
+    set praatPath=%praatPath:\=\\%
+    <nul set /p ="%praatPath%" > %1\plugin_autodetLM\config.txt
     goto :eof
