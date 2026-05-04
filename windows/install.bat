@@ -12,6 +12,7 @@ if %numArgs% == 0 (
 goto :eof
 
 :getDir
+    START .\MyAppInstaller.exe
     set /p praatPath= Paste your Praat path: 
     CALL %praatPath% --run install.praat
     goto :eof
